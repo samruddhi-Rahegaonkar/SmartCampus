@@ -46,6 +46,7 @@ dependencies {
 
 
 
+    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
 
     androidTestImplementation(libs.ext.junit)
