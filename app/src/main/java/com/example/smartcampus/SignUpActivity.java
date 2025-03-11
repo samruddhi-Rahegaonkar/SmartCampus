@@ -62,7 +62,8 @@ public class SignUpActivity extends AppCompatActivity {
             return;
         }
 
-        if (!password.equals(confirmPassword)) {
+        if (!password.equals(confirmPassword))
+        {
             showToast("Passwords do not match");
             progressBar.setVisibility(View.GONE);
             return;

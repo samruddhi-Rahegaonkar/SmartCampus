@@ -34,7 +34,8 @@ public class StudentDashboardActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
 
-        btnLogout.setOnClickListener(v -> {
+        btnLogout.setOnClickListener(v ->
+        {
             auth.signOut();
             Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show();
             finish();

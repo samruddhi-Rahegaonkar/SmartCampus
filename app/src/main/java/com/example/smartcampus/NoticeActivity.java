@@ -17,7 +17,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class NoticeActivity extends AppCompatActivity {
+public class NoticeActivity extends AppCompatActivity
+{
 
     private EditText etNoticeTitle, etNoticeDescription;
     private Button btnSubmitNotice;
