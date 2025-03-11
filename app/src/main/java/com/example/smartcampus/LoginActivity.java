@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (storedPassword != null && storedPassword.equals(enteredPassword)) {
                                 if ("faculty".equals(role) && facultyRadioButton.isChecked()) {
                                     showToast("Login successful as Faculty");
-                                    startActivity(new Intent(LoginActivity.this, NoticeActivity.class));
+                                    startActivity(new Intent(LoginActivity.this, TeacherDashboard.class));
                                 } else if ("student".equals(role) && studentRadioButton.isChecked()) {
                                     showToast("Login successful as Student");
                                     startActivity(new Intent(LoginActivity.this, StudentDashboardActivity.class));
