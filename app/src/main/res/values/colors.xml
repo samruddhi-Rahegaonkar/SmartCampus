@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="blue">#2196F3</color>
+    <color name="green">#4CAF50</color>
+    <color name="purple_700">#6B50FF</color>
+    <color name="teal_700">#008080</color>
+    <color name="primaryColor">#4A90E2</color>
+    <color name="secondaryColor">#7B61FF</color>
+    <color name="accentColor">#FF4081</color>
+    <color name="backgroundColor">#F5F5F5</color>
+    <color name="textColor">#333333</color>
+    <color name="buttonColor">#FF9800</color>
 </resources>
