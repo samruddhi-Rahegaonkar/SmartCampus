@@ -28,7 +28,7 @@ public class AssignmentActivity extends AppCompatActivity {
         btnSubmitAssignment = findViewById(R.id.btnSubmitAssignment);
         Button btnViewAssignments = findViewById(R.id.btnViewAssignment);
         btnViewAssignments.setOnClickListener(v -> {
-            Intent intent = new Intent(AssignmentActivity.this, ViewAssignmentsActivity.class);
+            Intent intent = new Intent(AssignmentActivity.this, ViewStudentsAssignmentsActivity.class);
             startActivity(intent);
         });
         btnPickDeadline.setOnClickListener(v -> showDatePicker());

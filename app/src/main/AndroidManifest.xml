@@ -18,6 +18,12 @@
         android:theme="@style/Theme.SmartCampus"
         tools:targetApi="31">
         <activity
+            android:name=".GradeFetchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewStudentsAssignmentsActivity"
+            android:exported="false" />
+        <activity
             android:name=".NoticeFetchActivity"
             android:exported="false" />
         <activity
