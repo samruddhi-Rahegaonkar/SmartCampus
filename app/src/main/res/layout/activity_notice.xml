@@ -56,7 +56,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:hint="Notice Title"/>
-
+    <TextView
+        android:id="@+id/tvSelectedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selected Date: None"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/btnPickDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick Date"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/black"/>
     <TextView
         android:id="@+id/tvNoticeDescription"
         android:layout_width="match_parent"

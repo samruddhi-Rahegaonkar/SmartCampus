@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_card"
+    android:layout_marginBottom="16dp"
+    android:elevation="6dp">
+
+    <!-- Student Name -->
+    <TextView
+        android:id="@+id/tvStudentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Name"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Assignment Title -->
+    <TextView
+        android:id="@+id/tvAssignmentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assignment Title"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Assignment Link (clickable) -->
+    <TextView
+        android:id="@+id/tvAssignmentLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assignment Link"
+        android:textSize="14sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:autoLink="web"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Year -->
+    <TextView
+        android:id="@+id/tvYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Grade with Badge Style -->
+    <TextView
+        android:id="@+id/tvGrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grade"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="@drawable/grade_badge"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="12dp"
+        android:gravity="center"
+        android:layout_gravity="end" />
+</LinearLayout>

@@ -24,10 +24,10 @@ public class MarkAttendanceActivity extends AppCompatActivity {
     private String selectedDate;
 
     private final Map<String, String> yearMap = new HashMap<String, String>() {{
-        put("1st year", "1st year");
-        put("2nd year", "2nd year");
-        put("3rd year", "3rd year");
-        put("Final year", "Final year");
+        put("1st year", "1st Year");
+        put("2nd year", "2nd Year");
+        put("3rd year", "3rd Year");
+        put("Final year", "Final Year");
     }};
 
     @Override
@@ -72,32 +72,28 @@ public class MarkAttendanceActivity extends AppCompatActivity {
             return;
         }
 
+        Log.d("Firestore", "Fetching from path: students/" + year + "/studentList");
+
         db.collection("students").document(year).collection("studentList")
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
-                    if (queryDocumentSnapshots == null || queryDocumentSnapshots.isEmpty()) {
-                        Toast.makeText(this, "No students found for " + year, Toast.LENGTH_SHORT).show();
-                        studentAdapter.setStudents(new ArrayList<>());
-                        return;
-                    }
-
+                    Log.d("Firestore", "Documents found: " + queryDocumentSnapshots.size());
                     List<Student> students = new ArrayList<>();
                     for (DocumentSnapshot doc : queryDocumentSnapshots) {
-                        Log.d("Firestore", "Student document: " + doc.getData());
+                        Log.d("Firestore", "Document data: " + doc.getData());
                         String studentName = doc.getString("name");
                         if (studentName != null) {
-                            String studentId = doc.getId();
-                            students.add(new Student(studentId, studentName, false));
+                            students.add(new Student(doc.getId(), studentName, false));
                         }
                     }
-
                     studentAdapter.setStudents(students);
                 })
                 .addOnFailureListener(e -> {
+                    Log.e("Firestore", "Error fetching students", e);
                     Toast.makeText(this, "Failed to load students: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                    Log.e("Firestore", "Error loading students", e);
                 });
     }
+
 
     private void submitAttendance() {
         String selectedYear = spinnerYear.getSelectedItem().toString();

@@ -23,9 +23,9 @@ public class ViewAttendanceActivity extends AppCompatActivity {
     private String selectedDate;
 
     private final Map<String, String> yearMap = new HashMap<String, String>() {{
-        put("1st year", "1st year");
-        put("2nd year", "2nd year");
-        put("3rd year", "3rd year");
+        put("1st year", "1st Year");
+        put("2nd year", "2nd Year");
+        put("3rd year", "3rd Year");
         put("Final year", "final year");
     }};
 

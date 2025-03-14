@@ -18,7 +18,7 @@ public class StudentDashboardActivity extends AppCompatActivity {
     private Button btnLogout;
     private FirebaseFirestore db;
     private FirebaseAuth auth;
-    private LinearLayout btnEvent, btnAssignment, btnAttendance, btnNotice;
+    private LinearLayout btnEvent, btnAssignment, btnAttendance, btnNotice,submittedAssignments;
     private TextView welcomeTextView;
 
     @Override
@@ -37,6 +37,7 @@ public class StudentDashboardActivity extends AppCompatActivity {
         btnAttendance = findViewById(R.id.btnAttendance);
         btnNotice = findViewById(R.id.btnNotice);
         welcomeTextView = findViewById(R.id.welcomeTextView);
+        submittedAssignments=findViewById(R.id.submittedAssignments);
 
         // Set welcome message dynamically (replace with user's name if available)
         String userName = "Student"; // You can fetch actual name from Firebase if needed
@@ -70,6 +71,10 @@ public class StudentDashboardActivity extends AppCompatActivity {
         // Notice button click event
         btnNotice.setOnClickListener(v -> {
             Intent intent = new Intent(StudentDashboardActivity.this, NoticeFetchActivity.class);
+            startActivity(intent);
+        });
+        submittedAssignments.setOnClickListener(v -> {
+            Intent intent=new Intent(StudentDashboardActivity.this, GradeFetchActivity.class);
             startActivity(intent);
         });
     }

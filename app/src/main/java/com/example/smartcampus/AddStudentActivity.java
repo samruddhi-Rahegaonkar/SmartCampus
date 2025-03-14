@@ -31,10 +31,11 @@ public class AddStudentActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
 
         // Populate Year Spinner
-        String[] years = {"Select Year", "1st Year", "2nd Year", "Final Year"};
+        String[] years = {"Select Year", "1st Year", "2nd Year","3rd Year", "Final Year"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, years);
         spinnerYear.setAdapter(adapter);
 
+        // Add student on button click
         btnAddStudent.setOnClickListener(v -> addStudent());
     }
 
@@ -44,25 +45,22 @@ public class AddStudentActivity extends AppCompatActivity {
         String email = etStudentEmail.getText().toString().trim();
         String year = spinnerYear.getSelectedItem().toString();
 
-        // Input Validation
+        // Input validation
         if (TextUtils.isEmpty(name)) {
             etStudentName.setError("Enter Student Name");
             etStudentName.requestFocus();
             return;
         }
-
         if (TextUtils.isEmpty(studentId)) {
             etStudentId.setError("Enter Student ID");
             etStudentId.requestFocus();
             return;
         }
-
         if (TextUtils.isEmpty(email)) {
             etStudentEmail.setError("Enter Student Email");
             etStudentEmail.requestFocus();
             return;
         }
-
         if (year.equals("Select Year")) {
             Toast.makeText(this, "Please select a valid Year", Toast.LENGTH_SHORT).show();
             return;
@@ -73,10 +71,13 @@ public class AddStudentActivity extends AppCompatActivity {
         student.put("name", name);
         student.put("studentId", studentId);
         student.put("email", email);
+        student.put("year", year); // Store year as a field for future queries
 
-        // Store data in Firestore
-        db.collection("students").document(year)
-                .collection("studentList").document(studentId)
+        // Store data in nested structure
+        db.collection("students")
+                .document(year)
+                .collection("studentList")
+                .document(studentId)
                 .set(student)
                 .addOnSuccessListener(aVoid -> {
                     Toast.makeText(AddStudentActivity.this, "Student added successfully to " + year, Toast.LENGTH_SHORT).show();
